@@ -97,7 +97,7 @@
       .nav-links .btn { width: 100%; }
     }
     .hero {
-      min-height: 690px; padding: 110px 0 85px; position: relative;
+      padding: 24px 0 85px; position: relative;
       display: flex; align-items: center; overflow: hidden;
     }
     .hero:before {
@@ -232,11 +232,16 @@
     .org-node.founder .agent-avatar { border-color: #ed8c5866; background: #ed8c581c; color: #ed8c58; }
     .org-node.planned .agent-avatar { border: 1px dashed #ffffff40; background: transparent; color: var(--muted); }
     .org-node.planned b { color: #c9cde0; }
-    .control-panel .org-graph { aspect-ratio: auto; height: 640px; margin-top: 8px; padding: 0; border: 0; background: radial-gradient(circle at 50% 35%, #9b7bff1f, transparent 55%); }
+    .control-panel { --av: 56px; --lead: 92px; }
+    .control-panel .org-graph { aspect-ratio: auto; height: clamp(400px, calc(100svh - 300px), 560px); margin-top: 8px; padding: 0; border: 0; background: radial-gradient(circle at 50% 35%, #9b7bff1f, transparent 55%); }
     .control-panel .org-graph > .eyebrow { display: none; }
     /* In the panel each node is placed by its avatar's centre, so wrapped labels hang below without shifting it */
-    .control-panel .org-node { transform: translate(-50%, -30px); }
-    .control-panel .org-node.lead { transform: translate(-50%, -52px); }
+    .control-panel .org-node { transform: translate(-50%, calc(var(--av) / -2)); }
+    .control-panel .org-node.lead { transform: translate(-50%, calc(var(--lead) / -2)); }
+    .control-panel .org-node .agent-avatar { width: var(--av); height: var(--av); font-size: calc(var(--av) * .36); }
+    .control-panel .org-node.lead .agent-avatar { width: var(--lead); height: var(--lead); font-size: calc(var(--lead) * .34); }
+    @media(max-height:900px) { .control-panel { --av: 46px; --lead: 74px; } .control-panel .org-node b { font-size: 12px; } .control-panel .org-node small { font-size: 10px; } }
+    @media(max-height:760px) { .control-panel { --av: 40px; --lead: 62px; padding: 18px 22px; } .control-panel .panel-top { padding-bottom: 12px; } .control-panel .panel-foot { margin-top: 10px; } }
     .control-panel .org-node.founder { width: 160px; }
     @media(max-width:700px) {
       .control-panel .org-graph { height: 600px; }
@@ -316,7 +321,7 @@
     }
     @media(max-width:900px) {
       .hero-grid { grid-template-columns: 1fr; }
-      .hero { padding: 85px 0; }
+      .hero { padding: 20px 0 70px; }
       .control-panel { width: 100%; }
       .departments { grid-template-columns: repeat(2,1fr); }
       .models { grid-template-columns: repeat(2,1fr); }
@@ -401,10 +406,10 @@
               <div class="eyebrow">Organisation map</div>
               <svg aria-hidden="true"></svg>
               <div class="org-nodes">
-                <div class="org-node founder" data-id="founder" style="--x:50;--y:10;--mx:50;--my:8"><span class="agent-avatar founder">◎</span><b>Human Founder</b><small>Vision &amp; approval</small></div>
-                <a class="org-node lead" href="#agent-rudra" data-id="rudra" data-parent="founder" style="--x:50;--y:33;--mx:50;--my:30"><span class="agent-avatar rudra">✦<img src="/images/agents/rudra.jpg" alt="" loading="lazy" onerror="this.remove()" /></span><b>Rudra</b><small>AI CEO</small></a>
-                <a class="org-node " href="#agent-nova" data-id="nova" data-parent="rudra" style="--x:16;--y:33;--mx:22;--my:50"><span class="agent-avatar nova">◉<img src="/images/agents/nova.jpg" alt="" loading="lazy" onerror="this.remove()" /></span><b>Nova</b><small>Operations Manager</small></a>
-                <div class="org-node planned" data-id="future" data-parent="rudra" style="--x:84;--y:33;--mx:78;--my:50"><span class="agent-avatar future">＋</span><b>More agents</b><small>Marketing · Finance · Infra</small></div>
+                <div class="org-node founder" data-id="founder" style="--x:50;--y:9;--mx:50;--my:8"><span class="agent-avatar founder">◎</span><b>Human Founder</b><small>Vision &amp; approval</small></div>
+                <a class="org-node lead" href="#agent-rudra" data-id="rudra" data-parent="founder" style="--x:50;--y:32;--mx:50;--my:30"><span class="agent-avatar rudra">✦<img src="/images/agents/rudra.jpg" alt="" loading="lazy" onerror="this.remove()" /></span><b>Rudra</b><small>AI CEO</small></a>
+                <a class="org-node " href="#agent-nova" data-id="nova" data-parent="rudra" style="--x:16;--y:32;--mx:22;--my:50"><span class="agent-avatar nova">◉<img src="/images/agents/nova.jpg" alt="" loading="lazy" onerror="this.remove()" /></span><b>Nova</b><small>Operations Manager</small></a>
+                <div class="org-node planned" data-id="future" data-parent="rudra" style="--x:84;--y:32;--mx:78;--my:50"><span class="agent-avatar future">＋</span><b>More agents</b><small>Marketing · Finance · Infra</small></div>
                 <div class="org-node planned" data-id="techmgr" data-parent="rudra" style="--x:30;--y:60;--mx:28;--my:67"><span class="agent-avatar techmgr">⚙</span><b>Technology Manager</b><small>Planned role</small></div>
                 <div class="org-node planned" data-id="researchmgr" data-parent="rudra" style="--x:72;--y:60;--mx:75;--my:67"><span class="agent-avatar researchmgr">◇</span><b>Research Manager</b><small>Planned role</small></div>
                 <a class="org-node " href="#agent-byte" data-id="byte" data-parent="techmgr" style="--x:17;--y:85;--mx:14;--my:86"><span class="agent-avatar byte">⌘<img src="/images/agents/byte.jpg" alt="" loading="lazy" onerror="this.remove()" /></span><b>Byte</b><small>Software Developer</small></a>
