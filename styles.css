@@ -58,6 +58,7 @@ h2 { margin-bottom: 0; font-family: Manrope, sans-serif; font-size: clamp(29px, 
 .folio { background: #e7f1f1; }
 .church { background: #f2ece1; }
 .learnapple { background: #ecf3e7; }
+.lumen { background: #eaedfb; }
 .card-top, .card-meta { display: flex; align-items: center; justify-content: space-between; }
 .app-icon { display: grid; width: 43px; height: 43px; place-items: center; border-radius: 12px; font-family: Manrope, sans-serif; font-size: 25px; font-weight: 800; }
 .logo-tile { overflow: hidden; border: 1px solid #0000000f; background: #fff; }
@@ -69,6 +70,8 @@ h2 { margin-bottom: 0; font-family: Manrope, sans-serif; font-size: clamp(29px, 
 .tag, .status { color: #75786f; font-size: 9px; font-weight: 700; letter-spacing: .12em; }
 .status { display: flex; align-items: center; gap: 7px; color: #627761; font-size: 8px; }
 .status i { width: 5px; height: 5px; box-shadow: none; }
+.status.soon { color: #5a6bc0; }
+.status.soon i { background: #e9a94f; }
 h3 { margin: 10px 0 7px; font-family: Manrope, sans-serif; font-size: 28px; font-weight: 600; letter-spacing: -.06em; }
 .app-card p { max-width: 350px; margin-bottom: 25px; color: #73766d; font-size: 13px; line-height: 1.65; }
 .card-cta { margin-top: auto; font-size: 11px; font-weight: 700; }
