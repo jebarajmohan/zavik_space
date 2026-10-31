@@ -128,6 +128,7 @@ footer { min-height: 77px; padding: 0 7.2vw; border-top: 1px solid var(--line); 
 .status-training { padding: 3px 8px; border: 1px solid #f5ce8350; border-radius: 20px; color: #f5ce83; }
 .agent-profile h3 { margin: 13px 0 0; color: #fff; font-size: 25px; letter-spacing: .04em; }
 .agent-profile h4 { margin: 5px 0 13px; color: #c3b5ff; font-size: 13px; font-weight: 600; }
+.agent-reports { display: block; margin: -6px 0 13px; color: var(--muted); font-size: 11px; letter-spacing: .04em; }
 .agent-profile p { min-height: 68px; margin: 0; color: var(--muted); font-size: 13px; line-height: 1.6; }
 .agent-assignment { margin: 16px 0; padding: 13px; border-radius: 9px; background: #ffffff08; color: #c9ccc0; font-size: 12px; line-height: 1.6; }
 .agent-assignment b { color: #fff; }
