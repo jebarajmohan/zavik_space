@@ -26,7 +26,7 @@
   <body>
     <header class="topbar">
       <a class="brand" href="#home" aria-label="Zavik home"><img class="brand-mark" src="favicon.svg" alt="" width="29" height="29" /><span>zavik<span class="brand-dot">.</span>space</span></a>
-      <nav class="top-nav"><a class="top-link" href="/mission">Mission</a><a class="top-link" href="/team">AI team</a><a class="top-link" href="#apps">Explore apps <span aria-hidden="true">↘</span></a></nav>
+      <nav class="top-nav"><a class="top-link" href="/mission">Mission</a><a class="top-link" href="/mission#team">AI team</a><a class="top-link" href="#apps">Explore apps <span aria-hidden="true">↘</span></a></nav>
     </header>
 
     <main id="home">
@@ -74,17 +74,9 @@
         <div class="coming-soon"><span class="plus">＋</span><span>More projects will find a home here.</span><span class="soon-line"></span></div>
       </section>
 
-      <section class="note"><span class="note-mark">✳</span><p>Made with care, shared from <strong>zavik.space</strong>.</p><a href="/team">Meet the AI team <span aria-hidden="true">↗</span></a></section>
+      <section class="note"><span class="note-mark">✳</span><p>Made with care, shared from <strong>zavik.space</strong>.</p><a href="/mission#team">Meet the AI team <span aria-hidden="true">↗</span></a></section>
     </main>
 
     <footer><a class="brand footer-brand" href="#home"><img class="brand-mark" src="favicon.svg" alt="" width="29" height="29" /><span>zavik<span class="brand-dot">.</span>space</span></a><span>© 2026 Jebaraj Mohan</span><a class="back-top" href="#home">Back to top ↑</a></footer>
-    <script>
-      // Fade sections in as they scroll into view; content stays visible without JS.
-      document.documentElement.classList.add("js");
-      const io = new IntersectionObserver((entries) => entries.forEach((e) => {
-        if (e.isIntersecting) { e.target.classList.add("is-visible"); io.unobserve(e.target); }
-      }), { threshold: 0.12 });
-      document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
-    </script>
   </body>
 </html>
