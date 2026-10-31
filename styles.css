@@ -60,11 +60,10 @@ h2 { margin-bottom: 0; font-family: Manrope, sans-serif; font-size: clamp(29px, 
 .learnapple { background: #eaf0f7; }
 .card-top, .card-meta { display: flex; align-items: center; justify-content: space-between; }
 .app-icon { display: grid; width: 43px; height: 43px; place-items: center; border-radius: 12px; font-family: Manrope, sans-serif; font-size: 25px; font-weight: 800; }
-.folio-icon { background: var(--green); color: #fff; }
-.folio-icon span { color: #e5ad73; }
-.church-icon { border: 1px solid #d1c5aa; color: #9b784d; font-size: 21px; }
-.learnapple-icon { background: #3156a3; color: #fff; }
-.learnapple-icon span { color: #f1c75b; }
+.logo-tile { overflow: hidden; border: 1px solid #0000000f; background: #fff; }
+.logo-tile img { width: 100%; height: 100%; object-fit: cover; }
+.logo-tile.padded { padding: 5px; }
+.logo-tile.padded img { object-fit: contain; }
 .arrow { color: #72766d; font-size: 21px; }
 .card-meta { justify-content: flex-start; gap: 16px; margin-top: 25px; }
 .tag, .status { color: #75786f; font-size: 9px; font-weight: 700; letter-spacing: .12em; }
