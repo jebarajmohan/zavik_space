@@ -105,7 +105,8 @@
       background: radial-gradient(circle,#795eff28,transparent 68%);
       top: -160px; right: -120px; pointer-events: none;
     }
-    .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 60px; align-items: center; position: relative; }
+    .hero-grid { display: grid; grid-template-columns: 1fr; gap: 56px; align-items: center; position: relative; }
+    .hero-grid > .control-panel { order: -1; }
     .hero h1 { font-size: clamp(3.2rem,7vw,5.8rem); letter-spacing: -.065em; margin: 20px 0; }
     .hero-copy { color: var(--muted); font-size: 1.12rem; max-width: 570px; }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 30px; }
@@ -231,15 +232,21 @@
     .org-node.founder .agent-avatar { border-color: #ed8c5866; background: #ed8c581c; color: #ed8c58; }
     .org-node.planned .agent-avatar { border: 1px dashed #ffffff40; background: transparent; color: var(--muted); }
     .org-node.planned b { color: #c9cde0; }
-    .control-panel .org-graph { aspect-ratio: auto; height: 600px; margin-top: 8px; padding: 0; border: 0; background: radial-gradient(circle at 50% 30%, #9b7bff1f, transparent 60%); }
+    .control-panel .org-graph { aspect-ratio: auto; height: 640px; margin-top: 8px; padding: 0; border: 0; background: radial-gradient(circle at 50% 35%, #9b7bff1f, transparent 55%); }
     .control-panel .org-graph > .eyebrow { display: none; }
     /* In the panel each node is placed by its avatar's centre, so wrapped labels hang below without shifting it */
-    .control-panel .org-node { left: calc(var(--mx) * 1%); top: calc(var(--my) * 1%); width: 104px; transform: translate(-50%, -26px); }
-    .control-panel .org-node.lead { transform: translate(-50%, -44px); }
-    .control-panel .org-node.founder { width: 140px; }
-    .control-panel .org-node.planned { width: 120px; }
-    .control-panel .org-node .agent-avatar { width: 52px; height: 52px; font-size: 19px; }
-    .control-panel .org-node.lead .agent-avatar { width: 88px; height: 88px; font-size: 30px; }
+    .control-panel .org-node { transform: translate(-50%, -30px); }
+    .control-panel .org-node.lead { transform: translate(-50%, -52px); }
+    .control-panel .org-node.founder { width: 160px; }
+    @media(max-width:700px) {
+      .control-panel .org-graph { height: 600px; }
+      .control-panel .org-node { left: calc(var(--mx) * 1%); top: calc(var(--my) * 1%); width: 104px; transform: translate(-50%, -26px); }
+      .control-panel .org-node.lead { transform: translate(-50%, -44px); }
+      .control-panel .org-node.founder { width: 140px; }
+      .control-panel .org-node.planned { width: 120px; }
+      .control-panel .org-node .agent-avatar { width: 52px; height: 52px; font-size: 19px; }
+      .control-panel .org-node.lead .agent-avatar { width: 88px; height: 88px; font-size: 30px; }
+    }
     @media(max-width:600px) {
       .org-graph { aspect-ratio: 9 / 17; padding: 18px; }
       .org-graph > .eyebrow { display: none; }
@@ -310,7 +317,7 @@
     @media(max-width:900px) {
       .hero-grid { grid-template-columns: 1fr; }
       .hero { padding: 85px 0; }
-      .control-panel { max-width: 570px; width: 100%; margin: auto; }
+      .control-panel { width: 100%; }
       .departments { grid-template-columns: repeat(2,1fr); }
       .models { grid-template-columns: repeat(2,1fr); }
       .workflow { grid-template-columns: repeat(3,1fr); }
@@ -394,15 +401,15 @@
               <div class="eyebrow">Organisation map</div>
               <svg aria-hidden="true"></svg>
               <div class="org-nodes">
-                <div class="org-node founder" data-id="founder" style="--x:50;--y:12;--mx:50;--my:8"><span class="agent-avatar founder">◎</span><b>Human Founder</b><small>Vision &amp; approval</small></div>
-                <a class="org-node lead" href="#agent-rudra" data-id="rudra" data-parent="founder" style="--x:50;--y:37;--mx:50;--my:30"><span class="agent-avatar rudra">✦<img src="/images/agents/rudra.jpg" alt="" loading="lazy" onerror="this.remove()" /></span><b>Rudra</b><small>AI CEO</small></a>
-                <a class="org-node " href="#agent-nova" data-id="nova" data-parent="rudra" style="--x:16;--y:37;--mx:22;--my:50"><span class="agent-avatar nova">◉<img src="/images/agents/nova.jpg" alt="" loading="lazy" onerror="this.remove()" /></span><b>Nova</b><small>Operations Manager</small></a>
-                <div class="org-node planned" data-id="future" data-parent="rudra" style="--x:84;--y:37;--mx:78;--my:50"><span class="agent-avatar future">＋</span><b>More agents</b><small>Marketing · Finance · Infra</small></div>
-                <div class="org-node planned" data-id="techmgr" data-parent="rudra" style="--x:30;--y:64;--mx:28;--my:67"><span class="agent-avatar techmgr">⚙</span><b>Technology Manager</b><small>Planned role</small></div>
-                <div class="org-node planned" data-id="researchmgr" data-parent="rudra" style="--x:72;--y:64;--mx:75;--my:67"><span class="agent-avatar researchmgr">◇</span><b>Research Manager</b><small>Planned role</small></div>
-                <a class="org-node " href="#agent-byte" data-id="byte" data-parent="techmgr" style="--x:17;--y:89;--mx:14;--my:86"><span class="agent-avatar byte">⌘<img src="/images/agents/byte.jpg" alt="" loading="lazy" onerror="this.remove()" /></span><b>Byte</b><small>Software Developer</small></a>
-                <a class="org-node " href="#agent-hawk" data-id="hawk" data-parent="techmgr" style="--x:43;--y:89;--mx:43;--my:86"><span class="agent-avatar hawk">◎<img src="/images/agents/hawk.jpg" alt="" loading="lazy" onerror="this.remove()" /></span><b>Hawk</b><small>Quality Assurance</small></a>
-                <a class="org-node " href="#agent-prism" data-id="prism" data-parent="researchmgr" style="--x:72;--y:89;--mx:75;--my:86"><span class="agent-avatar prism">◇<img src="/images/agents/prism.jpg" alt="" loading="lazy" onerror="this.remove()" /></span><b>Prism</b><small>Research Specialist</small></a>
+                <div class="org-node founder" data-id="founder" style="--x:50;--y:10;--mx:50;--my:8"><span class="agent-avatar founder">◎</span><b>Human Founder</b><small>Vision &amp; approval</small></div>
+                <a class="org-node lead" href="#agent-rudra" data-id="rudra" data-parent="founder" style="--x:50;--y:33;--mx:50;--my:30"><span class="agent-avatar rudra">✦<img src="/images/agents/rudra.jpg" alt="" loading="lazy" onerror="this.remove()" /></span><b>Rudra</b><small>AI CEO</small></a>
+                <a class="org-node " href="#agent-nova" data-id="nova" data-parent="rudra" style="--x:16;--y:33;--mx:22;--my:50"><span class="agent-avatar nova">◉<img src="/images/agents/nova.jpg" alt="" loading="lazy" onerror="this.remove()" /></span><b>Nova</b><small>Operations Manager</small></a>
+                <div class="org-node planned" data-id="future" data-parent="rudra" style="--x:84;--y:33;--mx:78;--my:50"><span class="agent-avatar future">＋</span><b>More agents</b><small>Marketing · Finance · Infra</small></div>
+                <div class="org-node planned" data-id="techmgr" data-parent="rudra" style="--x:30;--y:60;--mx:28;--my:67"><span class="agent-avatar techmgr">⚙</span><b>Technology Manager</b><small>Planned role</small></div>
+                <div class="org-node planned" data-id="researchmgr" data-parent="rudra" style="--x:72;--y:60;--mx:75;--my:67"><span class="agent-avatar researchmgr">◇</span><b>Research Manager</b><small>Planned role</small></div>
+                <a class="org-node " href="#agent-byte" data-id="byte" data-parent="techmgr" style="--x:17;--y:85;--mx:14;--my:86"><span class="agent-avatar byte">⌘<img src="/images/agents/byte.jpg" alt="" loading="lazy" onerror="this.remove()" /></span><b>Byte</b><small>Software Developer</small></a>
+                <a class="org-node " href="#agent-hawk" data-id="hawk" data-parent="techmgr" style="--x:43;--y:85;--mx:43;--my:86"><span class="agent-avatar hawk">◎<img src="/images/agents/hawk.jpg" alt="" loading="lazy" onerror="this.remove()" /></span><b>Hawk</b><small>Quality Assurance</small></a>
+                <a class="org-node " href="#agent-prism" data-id="prism" data-parent="researchmgr" style="--x:72;--y:85;--mx:75;--my:86"><span class="agent-avatar prism">◇<img src="/images/agents/prism.jpg" alt="" loading="lazy" onerror="this.remove()" /></span><b>Prism</b><small>Research Specialist</small></a>
               </div>
             </div>
         <p class="panel-foot">Instructions flow down · Reports flow up · Human approval at critical steps</p>
